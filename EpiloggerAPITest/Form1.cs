@@ -152,10 +152,10 @@ namespace EpiloggerAPITest
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            const string domain = "http://localhost:16007";
+            //const string domain = "http://localhost:16007";
             //const string domain = "http://epilogger.com";
             //const string domain = "http://epilogger.apphb.com";
-            //const string domain = "http://local.epilogger.com";
+            const string domain = "http://local.epilogger.com";
 
             var endpoints = new List<EndPoint>();
             endpoints.Add(new EndPoint { Name = "All Categories", EndPointURL = domain + "/api/categories" });
@@ -267,7 +267,7 @@ namespace EpiloggerAPITest
             
             request.Method = "POST";
             // Create POST data and convert it to a byte array.
-            var postData = "UserId=3fe7b8f8-90e5-48e7-b747-94a767631253&ItemId=24633511&AddedDateTime=&ItemType='Tweet'&MemboxId=24633511&ID=&EventId=1667";
+            var postData = "UserId=3fe7b8f8-90e5-48e7-b747-94a767631253&ItemId=5945676&AddedDateTime=&ItemType='Tweet'&MemboxId=&ID=&EventId=1667&IncludePhotos=true";
             var byteArray = Encoding.UTF8.GetBytes(postData);
             request.ContentType = "application/x-www-form-urlencoded";
             request.ContentLength = byteArray.Length;
@@ -287,7 +287,7 @@ namespace EpiloggerAPITest
 
                 resp.Close();
                 readStream.Close();
-            }    
+            }
 
 
 
