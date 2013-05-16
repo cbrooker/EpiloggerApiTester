@@ -153,9 +153,9 @@ namespace EpiloggerAPITest
         private void Form1_Load(object sender, EventArgs e)
         {
             //const string domain = "http://localhost:16007";
-            //const string domain = "http://epilogger.com";
+            const string domain = "http://epilogger.com";
             //const string domain = "http://epilogger.apphb.com";
-            const string domain = "http://local.epilogger.com";
+            //const string domain = "http://local.epilogger.com";
 
             var endpoints = new List<EndPoint>();
             endpoints.Add(new EndPoint { Name = "All Categories", EndPointURL = domain + "/api/categories" });
@@ -168,6 +168,7 @@ namespace EpiloggerAPITest
             endpoints.Add(new EndPoint { Name = "Search In Event", EndPointURL = domain + "/Api/Events/Event/1528/SearchInEvent/Big%20pimp" });
             endpoints.Add(new EndPoint { Name = "My Events", EndPointURL = domain + "/Api/Events/Me/AFA23475-0971-4795-BDDC-70F5437150FE/1/10" });
             endpoints.Add(new EndPoint { Name = "Subscribed Events", EndPointURL = domain + "/Api/Events/Me/Subscribed/AFA23475-0971-4795-BDDC-70F5437150FE/1/10" });
+            endpoints.Add(new EndPoint { Name = "Get Featured and Trending", EndPointURL = domain + "/api/events/FeaturedAndTrending" });
             endpoints.Add(new EndPoint { Name = "", EndPointURL = domain + "/api/" });
 
             endpoints.Add(new EndPoint { Name = "Tweets by Event (paged)", EndPointURL = domain + "/api/tweets/133/1/10" });
@@ -267,7 +268,7 @@ namespace EpiloggerAPITest
             
             request.Method = "POST";
             // Create POST data and convert it to a byte array.
-            var postData = "UserId=3fe7b8f8-90e5-48e7-b747-94a767631253&ItemId=5945676&AddedDateTime=&ItemType='Tweet'&MemboxId=&ID=&EventId=1667&IncludePhotos=true";
+            var postData = "UserId=b28ad783-ebe7-4afb-b821-1ed11f84b0e7&ItemId=25358714&AddedDateTime=&IncludePhoto=true&ItemType=Tweet&MemboxId=109&ID=&EventId=1648";
             var byteArray = Encoding.UTF8.GetBytes(postData);
             request.ContentType = "application/x-www-form-urlencoded";
             request.ContentLength = byteArray.Length;
